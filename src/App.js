@@ -1,29 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Bem vindo ao Ney Ponto!
-            (Só um teste de react app)
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import 'materialize-css/dist/css/materialize.min.css';
+import { Link } from 'react-router-dom'
+
+
+class App extends Component{
+ render(){
+ 	document.title = 'Ney Ponto'
+    return(
+    <div>
+		<nav>
+		    <div class="nav-wrapper red accent-4">
+		      <div class="brand-logo">Ponto</div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/registro">Registro</Link></li>
+            <li><Link to="/lista">Lista</Link></li>
+            <li><Link to="/sobre">Sobre</Link></li>
+            </ul>
+		    </div>
+		</nav>
+		<div class="collection">
+	        <Link to="/registro" class="collection-item">Registrar horario</Link>
+          <Link to="/lista" class="collection-item">Lista de horarios</Link>
+	        <Link to="/sobre" class="collection-item">Ir para a página sobre</Link>
+      	</div>
+	</div>
+    )
+ }
 }
 
 export default App;
